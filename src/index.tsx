@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {Home} from "./homepage/Home";
+import {Attraction} from "./components/layout/homepage/Attraction";
+import {Header} from "./components/layout/homepage/Header";
+import {Footer} from "./components/layout/homepage/Footer";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -11,7 +13,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     {/*<App />*/}
-      <Home/>
+      <Header/>
+      <Attraction/>
+      <Footer/>
   </React.StrictMode>
 );
 
