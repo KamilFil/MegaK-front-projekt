@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {Attraction} from "./components/layout/homepage/Attraction";
 import {Header} from "./components/layout/homepage/Header";
 import {Footer} from "./components/layout/homepage/Footer";
+import {AddForm} from "./components/common/AddForm";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -16,6 +17,7 @@ root.render(
       <Header/>
       <Attraction/>
       <Footer/>
+      <AddForm/>
   </React.StrictMode>
 );
 

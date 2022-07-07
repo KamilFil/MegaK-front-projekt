@@ -9,21 +9,26 @@ export const Attraction = () => {
         (async () => {
             const res = await fetch("http://localhost:3001/attraction/")
             const data = await res.json()
-            // console.log(data)
             setAttData(data)
         })();
-    }, []);
+    }, [attData]);
 
     // console.log(attData)
     if (attData === null) {
         return <p>Ładowanie zasobów</p>
     }
+
+    if(attData.length <= 0) {
+        return <p>Aktualnie brak atrkacji - wróć później</p>
+    }
+
     return (
              <>
                  <section className="att">
                      <div className="att-container">
                          <h2>Atrakcje</h2>
                          <div className="att-box">
+
                          {
                             attData.slice(0,4).map((att) => (
                                     <div className="att-box_item" key={att.id}>
