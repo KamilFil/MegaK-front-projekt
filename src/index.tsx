@@ -3,21 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {Attraction} from "./components/layout/homepage/Attraction";
-import {Header} from "./components/layout/homepage/Header";
-import {Footer} from "./components/layout/homepage/Footer";
-import {AddForm} from "./components/common/AddForm";
+import {BrowserRouter} from "react-router-dom";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    {/*<App />*/}
-      <Header/>
-      <Attraction/>
-      <Footer/>
-      <AddForm/>
+      <BrowserRouter>
+         <App />
+      </BrowserRouter>
   </React.StrictMode>
 );
 
