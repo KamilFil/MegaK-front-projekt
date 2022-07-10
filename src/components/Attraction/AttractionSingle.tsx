@@ -3,6 +3,7 @@ import {AttractionEntity} from 'types'
 import {useParams} from "react-router-dom";
 
 
+
 export const AttractionSingle = () => {
 
     const [att, setAtt] = useState<AttractionEntity | null>(null)

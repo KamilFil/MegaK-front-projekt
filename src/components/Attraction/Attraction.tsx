@@ -2,7 +2,12 @@ import React, {useEffect, useState} from "react"
 import {AttractionEntity} from 'types'
 import  "./Attraction.css"
 import {Link} from "react-router-dom";
-export const Attraction = () => {
+
+interface Props {
+    category: string,
+}
+
+export const Attraction = (props: Props) => {
 
     const [attData, setAttData] = useState<AttractionEntity[] | null> (null)
 
@@ -23,27 +28,37 @@ export const Attraction = () => {
         return <p>Aktualnie brak atrkacji - wróć później</p>
     }
 
+
+
     return (
              <>
                  <section className="att">
                      <div className="att-container">
-                         <h2>Atrakcje</h2>
+                         <h2>{props.category}</h2>
+                         {/*<p>Góry są piękne zobacz, gdzie warto je zobaczyć w Polsce</p>*/}
                          <div className="att-box">
 
                              {
                                  attData.slice(0,4).map((att) => (
                                      <div className="att-box_item" key={att.id}>
-                                         <p className="att-box_title">{att.nameAttraction}</p>
-                                         <img alt={att.nameAttraction} src="http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcT7XCRLzD5dQS9yPu2qiZKkU9KElJUBbgE4Qy0uIvPDijibWYjX9SeOQ3RLlULN9CR_"/>
+                                         <p className="att-box_cat">{props.category}</p>
+                                         <img alt={att.nameAttraction} src={att.img}/>
                                          <p className="att-box_town">{att.town}</p>
-                                         <Link to={`/${att.id}`}>Zobacz</Link>
-                                         <button>LIKE</button>
-                                         <p>Ilość serduszek: 2</p>
+                                         <p className="att-box_title">{att.nameAttraction}</p>
+
+                                         <div className='att-box_like-box'>
+                                             <i className="fa-solid fa-heart"></i>
+                                             <p>{att.valueLike}</p>
+                                         </div>
+                                         <Link className="att-box_link" to={`/${att.id}`}>Zobacz</Link>
                                      </div>
                                  ))
                              }
+
                          </div>
+                         <Link className="att-container_link" to={`/`}>Zobacz wszystkie</Link>
                      </div>
+
 
                  </section>
             </>

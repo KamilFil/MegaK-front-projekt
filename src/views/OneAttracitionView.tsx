@@ -1,4 +1,4 @@
-import {Header} from "../components/Header/Header";
+import {Nav} from "../components/Nav/Nav";
 import {Attraction} from "../components/Attraction/Attraction";
 import {Footer} from "../components/Footer/Footer";
 import {AttractionSingle} from "../components/Attraction/AttractionSingle";
@@ -7,8 +7,8 @@ import {AttractionSingle} from "../components/Attraction/AttractionSingle";
 export const OneAttracitionView = () => {
     return (
         <>
-            <Header title={"Strona głowna"}/>
-            <AttractionSingle />
+            <Nav/>
+            <Attraction category={"Wszystkos"} />
             <Footer/>
         </>
     );

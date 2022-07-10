@@ -1,5 +1,5 @@
 import React from 'react';
-import {Header} from "./components/Header/Header";
+import {Nav} from "./components/Nav/Nav";
 import {Attraction} from "./components/Attraction/Attraction";
 import {Footer} from "./components/Footer/Footer";
 import {AddForm} from "./components/common/AddForm";

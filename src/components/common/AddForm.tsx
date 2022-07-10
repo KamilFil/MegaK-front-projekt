@@ -46,7 +46,7 @@ export const AddForm = () => {
     }
 
 
-    return <form action="" onSubmit={adAtt}>
+    return <form  action="" onSubmit={adAtt}>
             <input type="text" name="nameAttraction" value={form.nameAttraction} required placeholder="Nazwa atrakcji" onChange={e => updateForm('nameAttraction', e.target.value)}/>
             <input type="" name="town" placeholder="Miasto" value={form.town} onChange={e => updateForm('town', e.target.value)}/>
             <textarea minLength={5} name="text" placeholder="Opisz atrakcje min 500zn" value={form.text} onChange={e => updateForm('text', e.target.value)}/>
