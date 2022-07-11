@@ -28,8 +28,6 @@ export const Attraction = (props: Props) => {
         return <p>Aktualnie brak atrkacji - wróć później</p>
     }
 
-
-
     return (
              <>
                  <section className="att">

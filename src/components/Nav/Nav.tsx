@@ -16,7 +16,7 @@ export const Nav = () => {
                         <Link className="nav-menu_link" to={"/"}>Strona główna</Link>
                     </li>
                     <li className="nav-menu_list-item">
-                        <Link className="nav-menu_link" to={"/kontakt/"}>Kontakt</Link>
+                        <Link className="nav-menu_link" to={"/add/"}>Dodaj atrakcje</Link>
                     </li>
                     <li className="nav-menu_list-item">
                         <Link className="nav-menu_link" to={"/zaloguj/"}>Zaloguj</Link>

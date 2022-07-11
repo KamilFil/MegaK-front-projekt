@@ -1,13 +1,14 @@
 import {Nav} from "../components/Nav/Nav";
 import {Attraction} from "../components/Attraction/Attraction";
 import {Footer} from "../components/Footer/Footer";
-import {AttractionSingle} from "../components/Attraction/AttractionSingle";
+import {AddForm} from "../components/common/AddForm";
 
 
-export const OneAttracitionView = () => {
+export const AttractionAdd = () => {
     return (
         <>
             <Nav/>
+            <AddForm/>
             <Attraction category={"Wszystkos"} />
             <Footer/>
         </>

@@ -1,19 +1,18 @@
 import React from 'react';
-import {Nav} from "./components/Nav/Nav";
-import {Attraction} from "./components/Attraction/Attraction";
-import {Footer} from "./components/Footer/Footer";
-import {AddForm} from "./components/common/AddForm";
 import {Route, Routes } from 'react-router-dom';
 import {HomePage} from "./views/HomePage";
-import {OneAttracitionView} from "./views/OneAttracitionView";
+import {AttractionSingleView} from "./views/Attraction-SingleView";
+import {AttractionAdd} from "./views/Attraction-Add";
+import {ErrPage} from "./views/Err-Page";
 
 export const App = () => {
   return (
       <>
         <Routes>
             <Route path='/' element={<HomePage/>}/>
-            <Route path='/add' element={<AddForm/>}/>
-            <Route path='/:id' element={<OneAttracitionView/>}/>
+            <Route path='/add' element={<AttractionAdd/>}/>
+            <Route path='/:id' element={<AttractionSingleView/>}/>
+            <Route path="*" element={<ErrPage />}/>
         </Routes>
       </>
   );
