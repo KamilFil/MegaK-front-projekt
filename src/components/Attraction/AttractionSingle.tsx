@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {AttractionEntity} from 'types'
 import {useParams} from "react-router-dom";
 import "./AttractionSingle.css"
+import {ErrPage} from "../../views/Err-Page";
 export const AttractionSingle = () => {
 
     const [att, setAtt] = useState<AttractionEntity | null>(null)
@@ -13,7 +14,21 @@ export const AttractionSingle = () => {
             const data = await res.json()
             setAtt(data)
         })()
-    },[id])
+    },[att])
+
+    const handleSubmit = async (e:any) => {
+        try {
+            await fetch(`http://localhost:3001/attraction/like/${e.target.id}`,{
+                method:'PATCH',
+                headers:{
+                    Accept: 'application/json'
+                }
+            })
+
+        } catch (e){
+            console.log(e)
+        }
+    }
 
     if(att === null) {
         return <p>Ładowanie zasobów..</p>
@@ -27,7 +42,7 @@ export const AttractionSingle = () => {
                     <h1>{att.nameAttraction}</h1>
                     <p>{att.town}</p>
                         <div className='att-box_like-box'>
-                            <i className="fa-solid fa-heart"></i>
+                            <button className="fa-solid fa-heart" id={att.id} onClick={handleSubmit}></button>
                             <p>{att.valueLike}</p>
                         </div>
                         <h2>{att.nameAttraction} - Opis</h2>

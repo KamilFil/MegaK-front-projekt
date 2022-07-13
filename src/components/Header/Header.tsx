@@ -42,9 +42,12 @@ export const Header = (props: Props) => {
                             <p>Najpiękniejsze miejsca na Ziemii w jednym miejscu</p>
                             <Link className="header_wrap-link" to={"/add"}>Dodaj atrakcje</Link>
                         </div>
-                        {/*<div className="header_wrap-favorite">*/}
-
-                        {/*</div>*/}
+                        {
+                            // <>
+                            // <img src={favAtt[0].img}/>
+                            // <p>{favAtt[0].nameAttraction}</p>
+                            // </>
+                        }
                     </div>
             </header>
         </>
