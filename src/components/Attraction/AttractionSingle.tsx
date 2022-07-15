@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react'
 import {AttractionEntity} from 'types'
 import {useParams} from "react-router-dom";
 import "./AttractionSingle.css"
-import {ErrPage} from "../../views/Err-Page";
 export const AttractionSingle = () => {
 
     const [loading, setLoading] = useState(false)
