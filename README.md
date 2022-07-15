@@ -1,4 +1,34 @@
-# Getting Started with Create React App
+#
+Pobierz pliki serwera backendowego z brencha "DEV":
+https://github.com/KamilFil/MegaK-Project-BE.git
+
+Zaimportuj bazę danych z folderu baza-danych umieszczonym w folderze - backendowym.
+
+Skonfiguruj bazę danych w folderze "configs"
+Uzupełnij dane połączenia.
+
+Zainstaluj potrzebne biblioteki:
+npm i 
+
+Pobierze pliki serwera frontendowego z brencha "DEV":
+https://github.com/KamilFil/MegaK-front-projekt.git
+
+Zainstaluj potrzebne biblioteki:
+npm i 
+
+Kliknij import i wybierz plik z pobrnaą bazą danych z podanego wcześniej linku.
+
+Włącz bazę danych w xampp.
+
+Uruchom serwer backendowy komendą:
+npm start
+
+Uruchom serwer frontendowy komendą:
+npm start
+
+#
+
+ Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -44,3 +74,6 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+
