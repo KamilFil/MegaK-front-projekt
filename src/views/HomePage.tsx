@@ -1,27 +1,39 @@
-import {Nav} from "../components/Nav/Nav";
 import {Attraction} from "../components/Attraction/Attraction";
 import {Footer} from "../components/Footer/Footer";
 import {AddForm} from "../components/common/AddForm";
 import {Header} from "../components/Header/Header";
 import "./HomePage.css";
-import {useState} from "react";
-import { AttractionEntity } from "../../../be/types/attraction/attraction-entity";
+import React, {useEffect, useState} from "react";
+import { AttractionEntity,CategoryEntity } from "types";
 
 <script src="https://kit.fontawesome.com/b4c3c17937.js" crossOrigin="anonymous"></script>
 
-
 export const HomePage = () => {
+    const [loading, setLoading] = useState(false)
+    const [attData, setAttData] = useState<AttractionEntity[] | null> (null)
+    const [attCat, setAttCat] = useState<CategoryEntity[] | null> (null)
 
+    useEffect(() => {
+        (async () => {
+            const res = await fetch("http://localhost:3001/attraction/")
+            const data = await res.json()
+            setAttData(data.attListRes)
+            setAttCat(data.allCategory)
+        })();
+        setLoading(false)
+    }, [loading]);
+
+    if(attCat === null) {
+        return <p>Brak atrkacji </p>
+    }
 
 
     return (
         <>
-            {/*<Nav/>*/}
             <Header title="Świat Atrakcji"/>
-            <Attraction category={"Miasto"}/>
-            <Attraction category={"Góry"}/>
-            <Attraction category={"Jeziora"}/>
-            <Attraction category={"Natura"}/>
+            {
+                attCat.map(cat => <Attraction key={cat.idCategory} category={cat.name} idCat={cat.idCategory}/>)
+            }
             <AddForm/>
             <Footer/>
         </>

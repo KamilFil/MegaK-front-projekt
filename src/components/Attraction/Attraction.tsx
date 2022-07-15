@@ -1,28 +1,34 @@
 import React, { useEffect, useState} from "react"
-import {AttractionEntity} from 'types'
+import {AttractionEntity, CategoryEntity} from 'types'
 import  "./Attraction.css"
-import {Link} from "react-router-dom";
-import {Button} from "reactjs-popup/dist/stories/components";
+import {Link, useParams} from "react-router-dom";
+
 
 interface Props {
-    category: string,
+    category: string;
+    idCat: number;
 }
+
+
 
 export const Attraction = (props: Props) => {
 
+    const [loading, setLoading] = useState(false)
     const [attData, setAttData] = useState<AttractionEntity[] | null> (null)
+    const [oneCategory, setOneCategory] = useState<CategoryEntity | null>(null)
+    // console.log(categoryData)
     useEffect(() => {
         (async () => {
-            const res = await fetch("http://localhost:3001/attraction/")
+            const res = await fetch(`http://localhost:3001/attraction/${props.idCat}`)
             const data = await res.json()
-            setAttData(data)
+            setAttData(data.attListRes);
+            setOneCategory(data.oneCategory);
         })();
-    }, [attData]);
-
-
-
+        setLoading(false)
+    }, [loading]);
 
     const handleSubmit = async (e:any) => {
+        setLoading(true)
         try {
             await fetch(`http://localhost:3001/attraction/like/${e.target.id}`,{
                 method:'PATCH',
@@ -34,24 +40,29 @@ export const Attraction = (props: Props) => {
         } catch (e){
             console.log(e)
         }
+
     }
 
     if (attData === null) {
-        return <p>Ładowanie zasobu</p>
+        return <p>Ładowanie zasobów</p>
     }
 
+
+
     if(attData.length <= 0) {
-        return <p>Aktualnie brak atrkacji - wróć później</p>
+        return null
     }
+
 
     return (
              <>
                  <section className="att">
                      <div className="att-container">
-                         <h2>{props.category}</h2>
+                         <h2>{props.category.toUpperCase()}</h2>
                          <div className="att-box">
 
                              {
+
                                  attData.slice(0,4).map((att) => (
                                      <div className="att-box_item" key={att.id}>
                                          <p className="att-box_cat">{props.category}</p>
@@ -60,7 +71,7 @@ export const Attraction = (props: Props) => {
                                          <p className="att-box_title">{att.nameAttraction}</p>
 
                                          <div className='att-box_like-box'>
-                                             <button className="fa-solid fa-heart" id={att.id} onClick={handleSubmit}></button>
+                                             <button className="fa-solid fa-heart" id={att.id} onClick={handleSubmit}> </button>
                                              <p>{att.valueLike}</p>
                                          </div>
 
@@ -70,7 +81,10 @@ export const Attraction = (props: Props) => {
                              }
 
                          </div>
-                         <Link className="att-container_link" to={`/`}>Zobacz wszystkie</Link>
+
+                             <Link className="att-container_link" to={`/${props.idCat}/`}>Zobacz wszystkie</Link>
+
+
                      </div>
                  </section>
             </>

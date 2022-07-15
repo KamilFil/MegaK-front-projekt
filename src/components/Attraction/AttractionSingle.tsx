@@ -5,18 +5,21 @@ import "./AttractionSingle.css"
 import {ErrPage} from "../../views/Err-Page";
 export const AttractionSingle = () => {
 
+    const [loading, setLoading] = useState(false)
     const [att, setAtt] = useState<AttractionEntity | null>(null)
     let {id} = useParams()
     useEffect(()=> {
 
         (async () => {
-            const res = await fetch(`http://localhost:3001/attraction/${id}`)
+            const res = await fetch(`http://localhost:3001/attraction/att/${id}`)
             const data = await res.json()
             setAtt(data)
         })()
-    },[att])
+        setLoading(false)
+    },[loading])
 
     const handleSubmit = async (e:any) => {
+        setLoading(true)
         try {
             await fetch(`http://localhost:3001/attraction/like/${e.target.id}`,{
                 method:'PATCH',
