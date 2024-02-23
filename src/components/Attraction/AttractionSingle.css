@@ -1,0 +1,43 @@
+.one-attraction {
+    padding: 60px 60px;
+    margin-top:10px;
+    background-color: #2AA79E;
+}
+
+.one-attraction_container {
+    /*box-shadow: 0 0px 4px 1px #ddd;*/
+    background-color: white;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 60px;
+    border-radius: 10px;
+}
+.one-attraction_box {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    width: 100%;
+
+    /*background-color: green;*/
+}
+
+.one-attraction_box-info {
+    padding: 20px;
+    flex-basis: 50%;
+}
+
+.one-attraction_box-info h2{
+    font-size: 18px;
+}
+
+.one-attraction_box-img {
+    flex-basis: 50%;
+}
+.one-attraction img {
+    border-radius: 10px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+

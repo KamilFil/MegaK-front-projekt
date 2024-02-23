@@ -1,0 +1,129 @@
+.att {
+    margin: 0 auto;
+    padding: 0px 20px;
+    box-shadow: 0 4px 7px -5px #ccc;
+}
+
+.att-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1280px;
+    padding: 60px 0 80px;
+}
+
+
+.att-container_link {
+
+    max-width: 200px;
+    text-align: center;
+    padding: 14px 28px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color:#2AA79E;
+    color: white;
+    transition: 0.2s;
+}
+
+.att-container_link:hover {
+    background-color: #2A9793;
+}
+
+
+.att-box {
+    margin: 40px 0px 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.att-box_item {
+    width: 23%;
+    margin-top: 30px;
+    height: auto;
+    box-shadow: 0 4px 7px 5px #ccc;
+    padding: 25px;
+}
+
+.att-box img {
+    margin: 10px 0px;
+    border-radius: 10px;
+    width: 100%;
+    height: 120px;
+
+}
+
+.att-box_cat {
+    margin: 10px 0px;
+    background-color: red;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 5px 8px;
+    border-radius: 8px;
+    font-size: 10px;
+}
+
+.att-box_town {
+    /*margin: 10px 0px;*/
+    font-size: 14px;
+}
+
+
+.att-box_title
+{
+    margin: 10px 0px;
+    min-height: 40px;
+    font-size: 16px;
+    color: black;
+}
+
+.att-box_like-box {
+    margin: 10px 0px 20px;
+    display: flex;
+    align-items: center;
+}
+
+
+.att-box_like-box button {
+    background: none;
+    border: none;
+}
+
+.att-box_like-box .fa-heart {
+    color:red;
+    font-size: 20px;
+    margin-right: 5px;
+    transition: .3s ease;
+    /*z-index:-99;*/
+}
+
+.att-box_like-box .fa-heart:hover {
+
+    transform: scale(1.2)
+}
+
+.att-box_link {
+    font-weight: 600;
+    /*margin: 80px 0px;*/
+    padding: 8px 28px;
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #2AA79E;
+    color: white;
+    transition: 0.2s;
+}
+
+.att-box_link:hover {
+background-color: #2A9793;
+}
